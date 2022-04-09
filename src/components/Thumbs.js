@@ -1,15 +1,16 @@
 import React, { Fragment } from 'react'
 
-function Thumbs({ items, currentIndex }) {
+function Thumbs({ items, currentIndex, onSelect }) {
     
     return (
         <Fragment>
             {
                 items.map((catalog, idx) => (
                     <span   
-                        id={idx} 
-                        key={idx} 
-                        data-testid={'thumb-button-' + idx}
+                        id={ idx }
+                        key={ idx }
+                        data-testid={ 'thumb-button-' + idx }
+                        onClick={ () => onSelect(idx) }
                     >
                         <span 
                             className={'inline-flex w-90 pa-4 image-thumb ' + 
@@ -17,8 +18,8 @@ function Thumbs({ items, currentIndex }) {
                         >
                             <span 
                                 className='mx-5 thumb' 
-                                id={idx} 
-                                style={{ backgroundImage: 'url('+ catalog.thumb + ')' }}
+                                id={ idx }
+                                style={ { backgroundImage: 'url('+ catalog.thumb + ')' } }
                             />
                         </span>
                     </span>

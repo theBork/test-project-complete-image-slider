@@ -6,7 +6,7 @@ function Viewer({ catalogImage }) {
       <img 
         alt='catalog-view' 
         className='w-75' 
-        src={catalogImage}
+        src={ catalogImage }
         data-testid='catalog-view' 
       />
     </div>
